@@ -6,7 +6,7 @@ __global__ void vecmult( int * v, std::size_t size )
 {
   // Get the id of the thread ( 0 -> 10 ).
   auto tid = threadIdx;
-  printf("Thread %s.\n", threadIdx.x);
+  printf("Thread %s.\n", tid);
   if (!(v[ tid ]%2)) v[tid] = v[tid]*2;
 }
 
