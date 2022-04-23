@@ -20,7 +20,8 @@ __global__ void grayscale_pixels(
 
 
 int main() {
-    cv::Mat input_image = cv::imread("in.jpg", cv::IMREAD_UNCHANGED);
+    cv::Mat input_image = cv::imread("in.jpg", cv::IMREAD_COLOR);
+
     unsigned char* pixels_rgb = input_image.data;
     std::vector<unsigned char> gray_pixels(input_image.rows * input_image.cols);
     cv::Mat output_image(input_image.rows, input_image.cols, CV_8UC1, gray_pixels.data());
